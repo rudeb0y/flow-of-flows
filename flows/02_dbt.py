@@ -69,7 +69,7 @@ with Flow(FLOW_NAME, storage=STORAGE, run_config=LocalRun(labels=["dev"])) as fl
 
     del_task = delete_dbt_folder_if_exists()
     dbt_repo = Parameter(
-        "dbt_repo_url", default="https://github.com/anna-geller/jaffle_shop"
+        "dbt_repo_url", default="https://github.com/rudeb0y/rudeb0y_shop"
     )
     dbt_repo_branch = Parameter("dbt_repo_branch", default=None)
     pull_task = pull_dbt_repo(dbt_repo, dbt_repo_branch)
