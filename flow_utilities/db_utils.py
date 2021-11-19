@@ -26,6 +26,6 @@ def load_df_to_db(df: pd.DataFrame, table_name: str, schema: str = "jaffle_shop"
     conn_string = get_db_connection_string()
     db_engine = create_engine(conn_string)
     conn = db_engine.connect()
-    conn.execute(f"DROP TABLE IF EXISTS {schema}.{table_name};")
-    df.to_sql(table_name, schema=schema, con=db_engine, index=False)
+    conn.execute(f"CREATE SCHEMA IF NOT EXISTS {schema};")
+    df.to_sql(table_name, schema=schema, con=db_engine, index=False, if_exists="replace")
     conn.close()
