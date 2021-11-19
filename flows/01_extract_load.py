@@ -18,7 +18,7 @@ STORAGE = GitHub(
 @task
 def extract_and_load(dataset: str) -> None:
     logger = prefect.context.get("logger")
-    file = f"https://raw.githubusercontent.com/anna-geller/jaffle_shop/main/data/{dataset}.csv"
+    file = f"https://raw.githubusercontent.com/rudeb0y/rudeb0y_shop/main/data/{dataset}.csv"
     df = pd.read_csv(file)
     load_df_to_db(df, dataset)
     logger.info("Dataset %s with %d rows loaded to DB", dataset, len(df))
