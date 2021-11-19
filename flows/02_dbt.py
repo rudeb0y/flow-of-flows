@@ -16,7 +16,7 @@ from prefect.tasks.secrets import PrefectSecret
 DBT_PROJECT = "jaffle_shop"
 FLOW_NAME = "02_dbt"
 STORAGE = GitHub(
-    repo="anna-geller/flow-of-flows",
+    repo="rudeb0y/flow-of-flows",
     path=f"flows/{FLOW_NAME}.py",
     access_token_secret="GITHUB_ACCESS_TOKEN",
 )
